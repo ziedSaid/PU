@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
 import {  AuthenticationService } from '../services/index';
+import { AuthService } from '../auth.service';
 
 @Component({
     moduleId: module.id,
@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
     returnUrl: string;
 
     constructor(
+        private fiAuth:AuthService,
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
@@ -25,6 +26,13 @@ export class LoginComponent implements OnInit {
 
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    }
+
+    loginGoogle(){
+    this.fiAuth.login();
+        
+
+
     }
 
     login() {

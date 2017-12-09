@@ -1,0 +1,55 @@
+
+<div class="row">
+<div class="col">
+    <form #f="ngForm" (ngSubmit)="save(f.value)" >
+        <div class="form-group" >
+        <label for="model"> Model</label>
+        <input #t ="ngModel" [(ngModel)]='product$.model' required  name="model" id="model" class="form-control"/>
+        <div class="alert alert-danger" *ngIf="t.touched && t.invalid"> 
+        
+        </div>
+        
+        </div>
+        <div class="form-group">
+            <label for="category" > Category</label>
+            <select  [(ngModel)] ='product$.category' name="category" id="category" class="form-control">
+              <option  *ngFor="let c of  categories$ | async "> {{c.name}} </option>
+              
+            </select>
+            
+            </div>
+            <div class="form-group">
+                <label required for="price" >Price</label>
+                <input #price="ngModel"  [(ngModel)]="product$.price" id="price" name="price" type="text" class="form-control"/>
+                
+                </div>
+                <div class="form-group">
+                    <label for="img"> Image Url</label>
+                    <input #imageUrl="ngModel" required [(ngModel)]="product$.url"  name="url"class="form-control"/>
+                    
+
+                    </div>
+                    <br>
+                   
+                    
+                    <button class="btn btn-lg btn-outline-primary">
+                      Save
+                    </button>
+                    <button  type="button" class="btn btn-lg btn-outline-danger" (click)="delete()">
+                        Delete
+                      </button>
+        
+        </form>
+  
+</div>
+<div class="col">
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" [src]="product$.url">
+        <div class="card-body">
+          <h4 class="card-title">{{product$.model}}</h4>
+          <p class="card-text">{{product$.price | currency:'USD':true}}</p>
+         
+      </div>
+</div>
+</div>
+

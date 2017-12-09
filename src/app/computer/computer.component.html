@@ -1,220 +1,41 @@
-<div class="row" style="margin-top: 90px">
-<div class="col">
-    <div class="card text-center">
-        <div class="card-header">
-            <h4>Lenovo</h4>
-        </div>
-        <div class="card-block">
-            <h4 class="card-title">Card Title</h4>
-            <img src="../assets/pc1.jpg">
-            <a href="#" class="btn btn-danger">Read More</a>
-        </div>
-        <div class="card-footer text-muted">
-          <button class="btn btn-outline-secondary">
-            Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-          </button>
-        </div>
-    </div> 
-</div>
-<div class="col">
-    <div class="card text-center">
-        <div class="card-header">
-            <h4>Lenovo</h4>
-        </div>
-        <div class="card-block">
-            <h4 class="card-title">Card Title</h4>
-            <img src="../assets/pc2.jpg">
-            <a href="#" class="btn btn-danger">Read More</a>
-        </div>
-        <div class="card-footer text-muted">
-          <button class="btn btn-outline-secondary">
-            Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-          </button>
-        </div>
-    </div>
+
+
+<style>
+.fo{
+    width:100%;
+    height:auto;
+}
+
+</style>
+<div class="row">
+    <ng-container
+    *ngFor='let c of products$ | async ; let i = index'>
+    <div class="col">
+            
+                    <div 
+                    
+                    class=" fo card p-5 m-5">
+                    <img class="card-img-top" [src]='c.url'>
+                    <div class="card-body">
+                    <h4 class="card-title">{{c.model}}</h4>
+                    <div class="card-text">{{c.price| currency:'USD':'symbol'}}</div>
+                    <a href="" class="btn btn-primary"> Add to Cart</a>
+                    </div>
+                    
+                    
+                    
+                    </div>
+                </div>
+            
+            <div class="w-100" *ngIf='(i+1)%2===0'></div>
+            
+   
+
+
+
+
+
+</ng-container>
 </div>
 
-<div class="col">
-    
-    <div class="card text-center">
-        <div class="card-header">
-            <h4>Lenovo</h4>
-        </div>
-        <div class="card-block">
-            <h4 class="card-title">Card Title</h4>
-            <img src="../assets/pc3.jpg">
-            <a href="#" class="btn btn-danger">Read More</a>
-        </div>
-        <div class="card-footer text-muted">
-          <button class="btn btn-outline-secondary">
-            Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-          </button>
-        </div>
-    </div>
-</div>
-</div>
-<div class="row" style="margin-top: 90px">
-    <div class="col">
-        <div class="card text-center">
-            <div class="card-header">
-                <h4>Lenovo</h4>
-            </div>
-            <div class="card-block">
-                <h4 class="card-title">Card Title</h4>
-                <img src="../assets/pc4.jpg">
-                <a href="#" class="btn btn-danger">Read More</a>
-            </div>
-            <div class="card-footer text-muted">
-              <button class="btn btn-outline-secondary">
-                Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-              </button>
-            </div>
-        </div> 
-    </div>
-    <div class="col">
-        <div class="card text-center">
-            <div class="card-header">
-                <h4>Lenovo</h4>
-            </div>
-            <div class="card-block">
-                <h4 class="card-title">Card Title</h4>
-                <img src="../assets/pc5.jpg">
-                <a href="#" class="btn btn-danger">Read More</a>
-            </div>
-            <div class="card-footer text-muted">
-              <button class="btn btn-outline-secondary">
-                Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-              </button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col">
-        
-        <div class="card text-center">
-            <div class="card-header">
-                <h4>Lenovo</h4>
-            </div>
-            <div class="card-block">
-                <h4 class="card-title">Card Title</h4>
-                <img src="../assets/pc6.jpg">
-                <a href="#" class="btn btn-danger">Read More</a>
-            </div>
-            <div class="card-footer text-muted">
-              <button class="btn btn-outline-secondary">
-                Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-              </button>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="row" style="margin-top: 90px">
-        <div class="col">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h4>Lenovo</h4>
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">Card Title</h4>
-                    <img src="../assets/pc7.jpg">
-                    <a href="#" class="btn btn-danger">Read More</a>
-                </div>
-                <div class="card-footer text-muted">
-                  <button class="btn btn-outline-secondary">
-                    Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-                  </button>
-                </div>
-            </div> 
-        </div>
-        <div class="col">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h4>Lenovo</h4>
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">Card Title</h4>
-                    <img src="../assets/pc8.jpg">
-                    <a href="#" class="btn btn-danger">Read More</a>
-                </div>
-                <div class="card-footer text-muted">
-                  <button class="btn btn-outline-secondary">
-                    Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-                  </button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col">
-            
-            <div class="card text-center">
-                <div class="card-header">
-                    <h4>Lenovo</h4>
-                </div>
-                <div class="card-block">
-                    <h4 class="card-title">Card Title</h4>
-                    <img src="../assets/pc9.jpg">
-                    <a href="#" class="btn btn-danger">Read More</a>
-                </div>
-                <div class="card-footer text-muted">
-                  <button class="btn btn-outline-secondary">
-                    Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-                  </button>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="row" style="margin-top: 90px">
-            <div class="col">
-                <div class="card text-center">
-                    <div class="card-header">
-                        <h4>Lenovo</h4>
-                    </div>
-                    <div class="card-block">
-                        <h4 class="card-title">Card Title</h4>
-                        <img src="../assets/pc10.jpg">
-                        <a href="#" class="btn btn-danger">Read More</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                      <button class="btn btn-outline-secondary">
-                        Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-                      </button>
-                    </div>
-                </div> 
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <div class="card-header">
-                        <h4>Lenovo</h4>
-                    </div>
-                    <div class="card-block">
-                        <h4 class="card-title">Card Title</h4>
-                        <img src="../assets/pc11.jpg">
-                        <a href="#" class="btn btn-danger">Read More</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                      <button class="btn btn-outline-secondary">
-                        Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-                      </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col">
-                
-                <div class="card text-center">
-                    <div class="card-header">
-                        <h4>Lenovo</h4>
-                    </div>
-                    <div class="card-block">
-                        <h4 class="card-title">Card Title</h4>
-                        <img src="../assets/pc12.jpg">
-                        <a href="#" class="btn btn-danger">Read More</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                      <button class="btn btn-outline-secondary">
-                        Add to panel <i class="fa fa-cart-arrow-down fa-lg text-success " aria-hidden="true"></i>
-                      </button>
-                    </div>
-                </div>
-            </div>
-            </div>
+
